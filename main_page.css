@@ -1,0 +1,222 @@
+body {
+    width: 100vw; height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------- 메뉴 바 ---------- */
+#menu { 
+    width: 120px; 
+    background-color: black; 
+    position: fixed; 
+    left:0px; top:0px; bottom:0px; 
+}
+#menugroup {
+    margin: 30% 0;
+}
+#menuname {
+    text-align: center; color: white; 
+}
+#menutext {
+    text-align: center; color: lightgray;
+    font-family:serif; font-weight: 700;
+}
+#buttongroup {
+    margin: 20px auto;
+}
+a { 
+    font-size:0.9em; 
+    font-weight:700; 
+    text-align:center; 
+}
+.buttons { 
+    width:70px; height:25px; 
+    border:2px solid white; border-radius:10px;
+    background-color: white; display: block;
+    margin:10px auto; padding:3px 6px; 
+    text-align: center; 
+}
+#buttongroup a { 
+    display: block; line-height: 25px; 
+    text-decoration: none; color: black; 
+}
+.buttons:hover { background-color: gray; }
+#buttongroup a:hover { color:white; }
+
+/* ---------- 섹션 ---------- */
+#section {
+    width: 100vw; height: 100vh; min-height: 100vh;
+    padding: 0 0 0 130px; /*padding-bottom: 20px;*/
+    overflow-y: scroll; z-index: 20;
+}
+#section::-webkit-scrollbar { display: none; }
+.linediv {
+    width:95%; height:3px;
+    background-color: lightgray;
+}
+
+/* footer */
+/* footer {
+    position : relative; height: 20px;
+    transform : translateY(-100%);
+} */
+
+/* ---------- 표시 창 별 CSS ---------- */
+/* MAIN */
+#clock {
+    color:gray; font-weight: 600;
+}
+#imageblock { width: 95%; }
+.mypic {
+    width: 100%; 
+}
+
+/* ABOUT */
+.gofor {
+    height: 20px; width: auto;
+}
+#abouttable {
+    height: 180px; width: 55%; margin: 20px 0 20px 20px;
+    border-width: 3px 0 3px 0; border-color: black;
+    border-style: groove; border-collapse: collapse;
+}
+#abouttable tbody th {
+    width: 18%;
+}
+#preference {
+    height: auto; width: 95%;
+}
+#preference h3, #preference p { margin: 7px 0; }
+.pbox {
+    height: 50px; width: 50%; 
+    margin: 10px 0; border-radius: 7px;
+    text-align: center; line-height: 50px;
+    font-family: fantasy;
+    background-color: lightgray;
+}
+#pcolor:active { background-color: gold; }
+#panimal:active { 
+    background-image: url('./media/cats_bg.jpeg');
+    background-attachment: local;
+    background-size: cover;
+}
+.flip { 
+    height: 50px; width: 50%;
+    border-radius: 7px; background-color: gray; 
+    color: white; font-family: fantasy;
+    text-align: center; line-height: 50px;
+}
+#panel { 
+    height: 100px; width: 50%;
+    border-radius: 0 0 7px 7px; background-color: lightgray; 
+    text-align: center; margin-bottom: 20px;
+    display: none; padding: 20px 0 20px 0;
+}
+
+/* HOBBY */
+.slidename {
+    height: 50px; width: 400px;
+    background-color: lightgray;
+    border-radius: 7px; margin: 10px 10px 10px 0;
+    text-align: center; line-height: 50px;
+    font-size: 1.2em;
+}
+#titlebtn {
+    background-color: black;
+    color: white;
+}
+div[data-role="slider"] {
+    position: relative; overflow: hidden;
+    background-color: gray; border-radius: 7px;
+    height: 500px; width: 400px;
+}
+.imgcontainer {
+    position: absolute;
+}
+.slideitem {
+    color: white; text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5px; float: left;
+}
+.slideitem h3, .slideitem p {
+    margin: 5px 0;
+}
+.mu_img {
+    height: 350px; width: auto;
+    margin: 5px auto;
+}
+.pic_img {
+    height: 380px; width: auto;
+    margin: 5px auto;
+}
+.mu_link {
+    width: 20px; height: auto;
+    margin: 5px auto;
+}
+#left-button, #right-button {
+    height: 40px; width: 195px;
+    margin: 7px 7px 10px 0; display: inline-block;
+    background-color: lightgrey;
+    border-width: 0px; border-radius: 7px;
+    text-align: center; line-height: 40px;
+}
+
+
+/* ---------- 반응형 웹 ---------- */
+@media screen and (max-width:600px) {
+    /* 메뉴 바 */
+    #menu {
+        height:90px; width: auto; position:fixed;
+        left:0px; right:0px; top:0px; z-index: 100;
+    }
+    #menugroup { margin: 0; }
+    #menuname {
+        text-align: center; color:white;
+        text-shadow: none; line-height: 40px;
+        margin: 0px auto;
+    }
+    #menutext { display: none; }
+    #buttongroup { 
+        width: 270px; margin: 0px auto;
+    }
+    .buttons {
+        display:inline-block;
+        width:60px; height:25px; 
+        border-style: solid; border-color: white;
+        border-width: 0px 2px 0px 2px; border-radius: 0%;
+        background-color: black; 
+        margin: auto 5px; padding:3px 6px; 
+        text-align: center; box-shadow: none; 
+    }
+    #buttongroup a {
+        display: inline; line-height: 25px;
+        text-decoration: none; color:white;
+        font-size: 0.85em;
+    }
+    .buttons:active { background-color: white; }
+    #buttongroup a:active { color:black; }
+
+    /* 섹션 */
+    #section {
+        position: absolute; width: 100vw;
+        padding: 90px 0 0 0; /*padding-bottom: 20px;*/
+    }
+
+    /* MAIN */
+    #smain > h2, #smain > #clock { width: 95%; text-align: center; }
+
+    /* ABOUT */
+    #sintroduce > h2 { width: 95%; text-align: center; } 
+    #preference h3, #preference p { text-align: center; }
+    .pbox, .flip, #panel { margin: 10px auto; width: 100%; }
+    #abouttable {
+        height: 180px; width: 95%; margin: 20px 0 20px 0;
+        border-width: 3px 0 3px 0; border-color: black;
+        border-style: groove; border-collapse: collapse;
+        font-size: 0.8em;
+    }
+
+    /* HOBBY */
+    .slidename { width: 95%; font-size: 1em; }
+    div[data-role="slider"] { width: 95%; }
+    #left-button, #right-button { width: 45%; margin-right: 3%;}
+}

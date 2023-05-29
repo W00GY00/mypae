@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WGY | introduce</title>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link rel="stylesheet" href="main_page.css">
+        <script src="main_page.js"></script>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1">
+        <script>
+            /* hash routing */
+            var section = $('#section');
+
+            /* hash 값에 따라 실행*/
+            var hashRouter = {
+                '': () => { 
+                    /*$('#smain').show();
+                    $('#sintroduce').hide();
+                    $('#shobby').hide();*/
+                    $('#sintroduce').fadeOut(400); 
+                    $('#shobby').fadeOut(400); 
+                    $('#smain').fadeIn(800);
+                },
+                'introduce': () => {
+                    /*$('#smain').hide();
+                    $('#sintroduce').show(); 
+                    $('#shobby').hide();*/
+                    $('#smain').fadeOut(400);
+                    $('#shobby').fadeOut(400); 
+                    $('#sintroduce').fadeIn(800);                      
+                },
+                'hobby': () => {
+                    /*$('#smain').hide(); 
+                    $('#sintroduce').hide(); 
+                    $('#shobby').show();*/
+                    $('#smain').fadeOut(400);
+                    $('#sintroduce').fadeOut(400); 
+                    $('#shobby').fadeIn(800); 
+                }
+            }
+
+            /* hash 값별 routerMap 함수를 호출 */
+            function router() {
+                let hash = location.hash.replace('#', '');
+                hashRouter[hash]();
+            }
+
+            /* 페이지 첫 로딩 시, hash 값 변경 시 router()가 실행 */
+            $(window).bind("load", router);
+            $(window).bind("hashchange", router);
+        </script>
+    </head>
+    <body>
+        <div id="menu">
+            <div id="menugroup">
+                <h3 id="menuname">Woo G.Y.</h3>
+                <p id="menutext">- MENU -</p>
+                <div id="buttongroup">
+                    <div id="button_main" class="buttons"><a href="#">MAIN</a></div>
+                    <div id="button_introduce" class="buttons"><a href="#introduce">ABOUT</a></div>
+                    <div id="button_hobby" class="buttons"><a href="#hobby">HOBBY</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="section">
+            <div id="smain">
+                <h2>WELCOME</h2>
+                <p id="clock">시계</p>
+                <div id="imageblock">
+                    <img src="./media/mypic_pohang.jpg" alt="우가연 포항 사진" class="mypic">
+                    <img src="./media/mypic_samcheok.jpeg" alt="우가연 삼척 사진" class="mypic">
+                </div>
+            </div>
+            <div id="sintroduce" style="display: none;">
+                <h2>About Me</h2>
+                <div class="linediv"></div>
+                <table id="abouttable">
+                    <thead>
+                        <th colspan="2">INFORMATION</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <td colspan="2">우가연</td>
+                        </tr>
+                        <tr>
+                            <th>소속</th>
+                            <td>강원대학교 컴퓨터공학과</td>
+                            <td><a href="https://cse.kangwon.ac.kr/cse/index.do"><img src="./media/icon_gofor.png" class="gofor"></a></td>
+                        </tr>
+                        <tr>
+                            <th>취미</th>
+                            <td>뮤지컬 관람, K-POP 감상, 수공예, 사진찍기</td>
+                            <td><a href="#hobby"><img src="./media/icon_gofor.png" class="gofor"></a></td>
+                        </tr>
+                        <tr>
+                            <th>MBTI</th>
+                            <td colspan="2">ISTJ</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="linediv"></div>
+                <div id="preference">
+                    <h3>Preference</h3>
+                    <p><i>click it</i></p>
+                    <div id="pcolor" class="pbox">COLOR</div>
+                    <div id="pbook" class="pbox">BOOK</div>
+                    <div id="panimal" class="pbox">ANIMAL</div>
+                    <div class="flip">All answer</div>
+                    <div id="panel">
+                        <p>Yellow</p>
+                        <p>어린왕자, 피터팬, 이상한 나라의 앨리스</p>
+                        <p>고양이</p>
+                    </div>
+                </div>
+            </div>
+            <div id="shobby" style="display: none;">
+                <h3 class="slidename" id="titlebtn">View Another Image Group</h3>
+                <h3 class="slidename" id="groupname">Musical</h3>
+                <div data-role="slider" data-width="400" data-height="500">
+                    <div class="imgcontainer" id="con_musical">
+                        <div class="slideitem">
+                            <h3>Dorian Gray</h3>
+                            <hr>
+                            <img src="./media/mu_dorian.jpeg" alt="뮤지컬 도리안 그레이" class="mu_img">
+                            <hr>
+                            <p>CJes Culture (2016)</p>
+                            <a href="https://namu.wiki/w/%EB%8F%84%EB%A6%AC%EC%95%88%20%EA%B7%B8%EB%A0%88%EC%9D%B4(%EB%AE%A4%EC%A7%80%EC%BB%AC)">
+                                <img src="./media/icon_gofor.png" class="mu_link">
+                            </a>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Dracula</h3>
+                            <hr>
+                            <img src="./media/mu_dracula.jpg" alt="뮤지컬 드라큘라" class="mu_img">
+                            <hr>
+                            <p>OD Company (2014~, 4 times)</p>
+                            <a href="https://namu.wiki/w/%EB%93%9C%EB%9D%BC%ED%81%98%EB%9D%BC(%EB%AE%A4%EC%A7%80%EC%BB%AC)/%EB%B8%8C%EB%A1%9C%EB%93%9C%EC%9B%A8%EC%9D%B4%ED%8C%90">
+                                <img src="./media/icon_gofor.png" class="mu_link">
+                            </a>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Frankenstein</h3>
+                            <hr>
+                            <img src="./media/mu_frankenstein.jpeg" alt="뮤지컬 프랑켄슈타인" class="mu_img">
+                            <hr>
+                            <p>NEW > EMK (2014~, 4 times)</p>
+                            <a href="https://namu.wiki/w/%ED%94%84%EB%9E%91%EC%BC%84%EC%8A%88%ED%83%80%EC%9D%B8(%EB%AE%A4%EC%A7%80%EC%BB%AC)">
+                                <img src="./media/icon_gofor.png" class="mu_link">
+                            </a>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Elizabeth</h3>
+                            <hr>
+                            <img src="./media/mu_elizabeth.jpeg" alt="뮤지컬 엘리자벳" class="mu_img">
+                            <hr>
+                            <p>EMK (2012~, 5 times)</p>
+                            <a href="https://namu.wiki/w/%EC%97%98%EB%A6%AC%EC%9E%90%EB%B2%B3">
+                                <img src="./media/icon_gofor.png" class="mu_link">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="imgcontainer" id="con_pic" style="display: none;">
+                        <div class="slideitem">
+                            <h3>Spring</h3>
+                            <hr>
+                            <img src="./media/pic_01.jpg" alt="사진01 봄 기차" class="pic_img">
+                            <hr>
+                            <p>Busan (2022)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Spring</h3>
+                            <hr>
+                            <img src="./media/pic_02.jpg" alt="사진02 봄 장미" class="pic_img">
+                            <hr>
+                            <p>Seoul (2021)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Spring</h3>
+                            <hr>
+                            <img src="./media/pic_03.jpg" alt="사진03 봄 건물" class="pic_img">
+                            <hr>
+                            <p>Jeonju (2022)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Summer</h3>
+                            <hr>
+                            <img src="./media/pic_04.jpg" alt="사진04 여름 파도" class="pic_img">
+                            <hr>
+                            <p>Jeju (2021)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Summer</h3>
+                            <hr>
+                            <img src="./media/pic_05.jpg" alt="사진05 여름 파도" class="pic_img">
+                            <hr>
+                            <p>Jeju (2021)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Summer</h3>
+                            <hr>
+                            <img src="./media/pic_06.jpg" alt="사진06 여름 파도" class="pic_img">
+                            <hr>
+                            <p>Busan (2022)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Summer</h3>
+                            <hr>
+                            <img src="./media/pic_07.jpg" alt="사진07 여름 호수" class="pic_img">
+                            <hr>
+                            <p>Jeju (2021)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Fall</h3>
+                            <hr>
+                            <img src="./media/pic_08.jpg" alt="사진08 가을 갈대밭" class="pic_img">
+                            <hr>
+                            <p>Suncheon (2021)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Winter</h3>
+                            <hr>
+                            <img src="./media/pic_09.jpg" alt="사진09 겨울 바다" class="pic_img">
+                            <hr>
+                            <p>Samcheok (2023)</p>
+                        </div>
+                        <div class="slideitem">
+                            <h3>Winter</h3>
+                            <hr>
+                            <img src="./media/pic_10.jpg" alt="사진10 겨울 눈" class="pic_img">
+                            <hr>
+                            <p>Seoul (2021)</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="left-button">◀</div>
+                <div id="right-button">▶</div>
+            </div>
+        </div>
+    </body>
+</html>
