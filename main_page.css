@@ -67,7 +67,7 @@ a {
 }
 #imageblock { width: 95%; }
 .mypic {
-    width: 100%; 
+    width: 80%; 
 }
 
 /* ABOUT */
@@ -203,6 +203,7 @@ div[data-role="slider"] {
 
     /* MAIN */
     #smain > h2, #smain > #clock { width: 95%; text-align: center; }
+    .mypic { width: 100%; }
 
     /* ABOUT */
     #sintroduce > h2 { width: 95%; text-align: center; } 
